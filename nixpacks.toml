@@ -1,5 +1,7 @@
-[providers]
-python = { version = "3.12" }
+providers = ["python"]
+
+[variables]
+NIXPACKS_PYTHON_VERSION = "3.12"
 
 [phases.setup]
 aptPkgs = ["libgl1", "libxcb1"]
