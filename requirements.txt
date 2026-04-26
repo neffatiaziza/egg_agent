@@ -20,5 +20,6 @@ sse-starlette==2.0.0
 pydantic
 python-multipart==0.0.9
 ultralytics
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch
 torchvision
