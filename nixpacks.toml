@@ -4,4 +4,4 @@ providers = ["python"]
 NIXPACKS_PYTHON_VERSION = "3.12"
 
 [phases.setup]
-aptPkgs = ["libgl1", "libxcb1"]
+aptPkgs = ["libgl1", "libglib2.0-0", "libsm6", "libxext6", "libxrender1", "libxcb1"]
