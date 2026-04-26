@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+node_modules/
+backend/reports/*.pdf
+backend/invoices/*.pdf
+backend/reports/*.png
+backend/invoices/*.png

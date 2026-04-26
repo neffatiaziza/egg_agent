@@ -1,0 +1,105 @@
+{
+  "pipeline": {
+    "step1": "YOLOv8n detection \u2014 locates each egg in raw image",
+    "step2": "Crop + 10% padding",
+    "step3": "EfficientNet-B0 classification \u2014 assigns grade"
+  },
+  "efficientnet": {
+    "architecture": "EfficientNet-B0",
+    "test_accuracy": 0.9845,
+    "test_f1_weighted": 0.9845,
+    "best_val_accuracy": 0.988,
+    "class_labels": [
+      "A",
+      "AA",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "class_to_idx": {
+      "A": 0,
+      "AA": 1,
+      "B": 2,
+      "C": 3,
+      "D": 4,
+      "E": 5
+    },
+    "idx_to_class": {
+      "0": "A",
+      "1": "AA",
+      "2": "B",
+      "3": "C",
+      "4": "D",
+      "5": "E"
+    },
+    "input_size": [
+      224,
+      224,
+      3
+    ],
+    "normalize_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalize_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "yolo": {
+    "architecture": "YOLOv8n",
+    "map50": 0.9858,
+    "map50_95": 0.9764,
+    "input_size": 640,
+    "classes": [
+      "A",
+      "AA",
+      "B",
+      "C",
+      "D",
+      "E"
+    ]
+  },
+  "grade_to_eu_mapping": {
+    "AA": {
+      "eu_grade": "Classe A Extra",
+      "destination": "premium_retail"
+    },
+    "A": {
+      "eu_grade": "Classe A",
+      "destination": "commercial_retail"
+    },
+    "B": {
+      "eu_grade": "Classe A",
+      "destination": "commercial_retail",
+      "note": "borderline"
+    },
+    "C": {
+      "eu_grade": "Classe B",
+      "destination": "food_industry"
+    },
+    "D": {
+      "eu_grade": "Classe B",
+      "destination": "food_industry",
+      "note": "degraded"
+    },
+    "E": {
+      "eu_grade": "Oeuf industriel",
+      "destination": "rejection"
+    }
+  },
+  "confidence_thresholds": {
+    "high": 0.8,
+    "medium": 0.6,
+    "low": 0.0
+  },
+  "dataset": {
+    "name": "MMU Egg Grading Dataset",
+    "total_images": 5580,
+    "classes": 6,
+    "yolo_annotated": 5580
+  }
+}
