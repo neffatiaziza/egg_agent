@@ -1,0 +1,5 @@
+[providers]
+python = {}
+
+[phases.install]
+cmds = ["pip install -r backend/requirements.txt"]
